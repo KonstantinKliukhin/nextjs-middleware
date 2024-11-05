@@ -1,0 +1,67 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss", "simple-import-sort",  "unused-imports", "next-fsd", "@typescript-eslint"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react/display-name": "off",
+    "unused-imports/no-unused-imports": "error",
+    "next-fsd/path-checker": ["error", { "alias": "@" }],
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "if", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
+    "next-fsd/layer-imports": [
+      "error",
+      {
+        "alias": "@",
+        "ignoreImportPatterns": [
+          "**/@x/**"
+        ],
+        "ignoreFilesPatterns": [
+          "**/middleware.ts",
+          "**/src/shared/config/**/*.(ts|tsx)",
+          "**/src/shared/api/**/*.(ts|tsx)"
+        ]
+      }
+    ],
+    "next-fsd/public-api-imports": [
+      "error",
+      {
+        "alias": "@",
+        "ignorePatterns": ["**/src/shared/config/*.(ts|tsx)", "**/src/shared/api/*.(ts|tsx)","**/middleware.ts"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "unused-imports/no-unused-imports": "off",
+        "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
+  "globals": {
+    "DeepPartial": true,
+    "ValueOf": true,
+    "OptionalRecord": true,
+    "Id": true,
+    "IdObj": true,
+    "Dto": true,
+    "UpdateDto": true
+  }
+}

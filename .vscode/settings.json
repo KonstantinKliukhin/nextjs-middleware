@@ -1,0 +1,26 @@
+{
+  "eslint.format.enable": true,
+  "eslint.run": "onSave",
+  "editor.inlineSuggest.enabled": true,
+  "git.autofetch": true,
+  "editor.formatOnSave": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false,
+    "typescript": true,
+    "typescriptreact": true
+  },
+  "npm.enableRunFromFolder": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"]
+}
